@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Form</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data" action="http://localhost:8000/banks/add/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add">
+     </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/accounts/style.css">
+</head>
+<body>
+    <form method="POST" action="http://localhost:8000/accounts/login/">
+        {% csrf_token %}
+        <div class="title" > Login </div>
+        <label for="username"> Username </label>
+        <div>
+            <span style="color: red">{{ errors.0 }}</span><br>
+            <input id="username" type="text" name="username" value="{{ request.POST.username }}">
+        </div>
+        <label for="password"> Password </label>
+        <div>
+            <span id="error" style="color: red">
+                {{ errors.0 }}
+            </span>
+            <br>
+            <input type="password" id="password" name="password">
+
+        </div>
+        <button > log in </button>
+     </form>
+</body>
+</html>

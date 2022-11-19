@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banks list</title>
+</head>
+<body>
+    <h1>List of banks</h1>
+    <ul>
+        {% for bank in object_list %}
+            <li> Bank name : {{ bank.name }} <br>
+            </li>
+
+            <li> Bank ID : {{bank.auto_increment }} <br>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>

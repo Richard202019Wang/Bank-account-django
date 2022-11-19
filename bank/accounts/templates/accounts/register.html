@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+<link rel="stylesheet" href="/static/accounts/style.css">
+
+</head>
+<body>
+
+<form method="POST" action="http://localhost:8000/accounts/register/">
+    {% csrf_token %}
+	<div class="title" > Signup </div>
+	<label for="username"> Username </label>
+    <div>
+        <span style="color: red">{{ errors.5 }}{{ errors.7 }}</span>
+        <br>
+        <input id="username" type="text" name="username" value="{{ request.POST.username }}">
+
+    </div>
+    <label for="password"> Password1 </label>
+    <div>
+        <span id="error" style="color: red; " >
+            {{ errors.0 }}
+            {{ errors.1 }}
+            {{ errors.3 }}
+        </span>
+        <br>
+        <input type="password" id="password1" name="password1">
+    </div>
+    <label for="password"> Password2 </label>
+    <div>
+        <span id="error" style="color: red">
+            {{ errors.0 }}
+            {{ errors.2 }}
+            {{ errors.4 }}
+        </span>
+        <br>
+        <input type="password" id="password2" name="password2"><br>
+
+    </div>
+    <label for="email"> Email </label>
+    <div>
+        <span id="error" style="color: red">
+            {{ errors.6 }}
+        </span>
+        <br>
+        <input type="email" id="email" name="email" value="{{ request.POST.email }}">
+
+    </div>
+    </div>
+    <label for="firstname"> First Name </label>
+    <div>
+        <input type="text" id="firstname" name="first_name" value="{{ request.POST.first_name }}">
+    </div>
+    <label for="lastname"> Last Name </label>
+    <div>
+        <input type="text" id="lastname" name="last_name" value="{{ request.POST.last_name }}">
+    </div>
+    <button > submit </button>
+</form>
+
+</body>
+</html>
+
+
+
+
